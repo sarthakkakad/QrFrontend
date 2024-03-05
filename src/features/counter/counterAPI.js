@@ -135,7 +135,7 @@ export function sendPersonalQr(id) {
 export function VerifyQr(data) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/qrCode/verify", {
+      const response = await fetch("https://dynamicqr-dhxo.onrender.com/qrCode/verify", {
         method : "POST",
         body : JSON.stringify({data : data.code , admin : data.admin}),
         credentials: 'include',
