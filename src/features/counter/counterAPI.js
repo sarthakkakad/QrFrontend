@@ -8,7 +8,7 @@ export function fetchCount(amount = 1) {
 export function checkUser(userData) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/user/login", {
+      const response = await fetch("https://dynamicqr-dhxo.onrender.com/user/login", {
         method : "POST",
         body : JSON.stringify(userData),
         credentials: 'include',
@@ -30,7 +30,7 @@ export function checkUser(userData) {
 export function getAllParticipants() {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/participants/", {
+      const response = await fetch("https://dynamicqr-dhxo.onrender.com/participants/", {
         method : "GET",
         credentials: 'include',
       })
@@ -50,7 +50,7 @@ export function getAllParticipants() {
 export function getAllEntries() {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/entry/", {
+      const response = await fetch("https://dynamicqr-dhxo.onrender.com/entry/", {
         method : "GET",
         credentials: 'include',
       })
@@ -70,7 +70,7 @@ export function getAllEntries() {
 export function createParticipant(userData) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/participants/create", {
+      const response = await fetch("https://dynamicqr-dhxo.onrender.com/participants/create", {
         method : "POST",
         body : JSON.stringify(userData),
         credentials: 'include',
@@ -92,7 +92,7 @@ export function createParticipant(userData) {
 export function bulkQrSend(userData) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/participants/createBulk", {
+      const response = await fetch("https://dynamicqr-dhxo.onrender.com/participants/createBulk", {
         method : "POST",
         body : userData,
         credentials: 'include'
@@ -113,7 +113,7 @@ export function bulkQrSend(userData) {
 export function sendPersonalQr(id) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/qrCode/sendPersonal", {
+      const response = await fetch("https://dynamicqr-dhxo.onrender.com/qrCode/sendPersonal", {
         method : "POST",
         body : JSON.stringify({id}),
         credentials: 'include',
@@ -135,7 +135,7 @@ export function sendPersonalQr(id) {
 export function VerifyQr(data) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/qrCode/verify", {
+      const response = await fetch("https://dynamicqr-dhxo.onrender.com/qrCode/verify", {
         method : "POST",
         body : JSON.stringify({data : data.code , admin : data.admin}),
         credentials: 'include',
@@ -157,7 +157,7 @@ export function VerifyQr(data) {
 export function sendEveryoneQr() {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/qrCode/generateQr", {
+      const response = await fetch("https://dynamicqr-dhxo.onrender.com/qrCode/generateQr", {
         method : "POST",
         credentials: 'include'
       })
@@ -177,7 +177,7 @@ export function sendEveryoneQr() {
 export function deleteParticipant(id) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/participants/" + id, {
+      const response = await fetch("https://dynamicqr-dhxo.onrender.com/participants/" + id, {
         method : "DELETE",
         credentials: 'include'
       })
@@ -199,7 +199,7 @@ export function deleteParticipant(id) {
 export function AddSavedPost(id) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch("http://localhost:8080/auth/saved/" + id, {
+      const response = await fetch("https://dynamicqr-dhxo.onrender.com/auth/saved/" + id, {
         method : "PATCH",
         credentials: 'include'
       })
@@ -219,7 +219,7 @@ export function AddSavedPost(id) {
 export function getUserInfo(id) {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch(`http://localhost:8080/auth/user/${id}`, {
+      const response = await fetch(`https://dynamicqr-dhxo.onrender.com/auth/user/${id}`, {
         method : "GET",
         credentials: 'include',
       })
