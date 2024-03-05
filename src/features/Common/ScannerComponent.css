@@ -1,0 +1,55 @@
+.scanner-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    margin: auto;
+    text-align: center;
+  }
+
+@media screen and (max-width: 480px) {
+    .scan-line {
+        margin: 15% 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px; /* Adjust the height of the scanning line as needed */
+        background-color: #00ff00; /* Set the color of the scanning line */
+        animation: scanAnimation 3s infinite linear;
+      }
+      
+      @keyframes scanAnimation {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+}
+  
+.scan-line {
+    margin-top: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px; /* Adjust the height of the scanning line as needed */
+    background-color: #00ff00; /* Set the color of the scanning line */
+    animation: scanAnimation 3s infinite linear;
+  }
+  
+  @keyframes scanAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(15000%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
