@@ -11,33 +11,43 @@ import {
 } from "react-router-dom";
 import ParticipationTable from "./features/Common/ParticipationTable";
 import EntryTable from "./features/Common/EntryTable";
+import LoginPage from "./features/Common/Login";
+import Protected from "./features/Common/Protected";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <div>
+        <LoginPage />
+      </div>
+    ),
+  },
+  {
+    path: "scanner",
+    element: (
+      <Protected>
         <Navbar />
         <HtmlScanner />
-      </div>
+      </Protected>
     ),
   },
   {
     path: "entries",
     element: (
-      <div>
+      <Protected>
         <Navbar />
         <EntryTable />
-      </div>
+      </Protected>
     ),
   },
   {
     path: "records",
     element: (
-      <div>
+      <Protected>
         <Navbar />
         <ParticipationTable />
-      </div>
+      </Protected>
     ),
   },
 ]);

@@ -5,7 +5,7 @@ import { selectsendEveryoneQr, sendEveryoneQrAsync } from '../counter/counterSli
 import { useAlert } from 'react-alert'
 
 const navigation = [
-  { name: 'Scanner', href: '/', current: true },
+  { name: 'Scanner', href: '/scanner', current: true },
   { name: 'Records', href: '/records', current: false },
   { name: 'Entries', href: '/entries', current: false },
 ]

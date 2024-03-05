@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { VerifyQr, bulkQrSend, checkUser, createParticipant, deleteParticipant, getAllEntries, getAllParticipants, sendEveryoneQr, sendPersonalQr } from './counterAPI';
 
 const initialState = {
-  user : {id : "65da4c95b317d564d8677bf0"},
+  user : null,
   status: 'idle',
   error : null,
   participants : null,
