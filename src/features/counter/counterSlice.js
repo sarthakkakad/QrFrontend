@@ -148,6 +148,7 @@ export const counterSlice = createSlice({
       })
       .addCase(checkUserAsync.fulfilled, (state, action) => {
         state.user = action.payload.user;
+        localStorage.setItem('token' , action.payload.user.id)
         state.status = "idle";
       })
       .addCase(checkUserAsync.rejected, (state, action) => {

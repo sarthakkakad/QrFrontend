@@ -6,8 +6,10 @@ import { selectUser } from '../counter/counterSlice'
 function Protected({children}) {
     const user = useSelector(selectUser)
 
+    const token = localStorage.getItem("token") 
+    console.log(token)
 
-    if(user){
+    if(user || token){
         return children
     }
     else{

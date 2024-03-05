@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition  } from '@headlessui/react'
 import {useDispatch, useSelector } from 'react-redux'
 import { selectsendEveryoneQr, sendEveryoneQrAsync } from '../counter/counterSlice'
 import { useAlert } from 'react-alert'
+import { Link } from 'react-router-dom'
 
 const navigation = [
   { name: 'Scanner', href: '/scanner', current: true },
@@ -19,6 +20,10 @@ export default function Navbar() {
   const statusSendAll = useSelector(selectsendEveryoneQr)
   const dispatch = useDispatch()
 
+  const handleLogout = () =>{
+    localStorage.removeItem('token')
+    window.location.reload()
+  }
   useEffect(()=>{
     if (statusSendAll) {
       alert.info("Qr Sent to Everyone")
@@ -57,9 +62,9 @@ export default function Navbar() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
@@ -67,9 +72,10 @@ export default function Navbar() {
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                     <button onClick={()=>handleSendEveryone()} className='text-white p-3'>SendEveryone</button>
+                    <button onClick={()=>handleLogout()} className='text-white p-3'>Logout</button>
                   </div>
                 </div>
               </div>
@@ -145,6 +151,7 @@ export default function Navbar() {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
+                <div>
                 <Disclosure.Button
                   key={item.name}
                   as="a"
@@ -157,7 +164,10 @@ export default function Navbar() {
                 >
                   {item.name}
                 </Disclosure.Button>
+                </div>
               ))}
+              <button onClick={()=>handleSendEveryone()} className='text-white p-3'>SendEveryone</button>
+              <button onClick={()=>handleLogout()}>Logout</button>
             </div>
           </Disclosure.Panel>
         </>
