@@ -15,7 +15,7 @@ export default function HtmlScanner() {
   const dispatch = useDispatch();
   const verifiedUser = useSelector(selectVerifiedUser);
   const QrMessage = useSelector(selectQrMessage);
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem('token1')
   const [view, setView] = useState(false);
 
   useEffect(() => {

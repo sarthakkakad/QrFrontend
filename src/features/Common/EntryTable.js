@@ -53,9 +53,9 @@ export default function EntryTable() {
                   scope="row"
                   className="px-6 py-4 font-medium  whitespace-nowrap text-white"
                 >
-                  {Participant.participant?.name}
+                  {Participant?.participant?.name}
                 </th>
-                <td className="px-6 py-4">{Participant.admin.name}</td>
+                <td className="px-6 py-4">{Participant?.admin?.name}</td>
                 <td className="px-6 py-4 flex gap-2">{formatDateTime(Participant.updatedAt)}
                 </td>
               </tr>
